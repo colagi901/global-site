@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Globe2, FileText, Headphones, ShieldCheck, Check, Sparkles, Lock, CreditCard, Loader2 } from 'lucide-react';
+import { ArrowRight, Globe2, FileText, Headphones, ShieldCheck, Check, Lock, CreditCard, Loader2 } from 'lucide-react';
 import { useCurrency } from '@/components/AppShell';
 import { PRICING_PLANS, formatPrice, PlanType, supabase } from '@/lib/core';
 import { useRouter } from 'next/navigation';
@@ -44,7 +44,7 @@ export default function HomePage() {
   };
 
   return (
-    <div>
+    <main>
       <section className="bg-gradient-to-b from-indigo-50 via-white to-white py-20 px-4 text-center">
         <div className="mx-auto max-w-4xl">
           <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white px-4 py-1.5 text-xs font-medium text-indigo-700">
@@ -134,3 +134,15 @@ export default function HomePage() {
                       <span>{loadingPlan === plan.id ? '连接收银台中...' : `立即订阅 (${priceStr})`}</span>
                     </button>
                     <p className="mt-2.5 flex items-center justify-center gap-1 text-xs opacity-60">
+                      <Lock className="h-3 w-3" /> Visa / Mastercard / Apple Pay / Google Pay
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
